@@ -18,7 +18,7 @@
         };
         var map = new google.maps.Map(document.getElementById("map_canvas"),
             myOptions);
-        var url='http://pipes.yahoo.com/pipes/pipe.run?_id=12a52e202be8b86ebe5583a7841f3489&_render=kml&spotshareglId=0zPubHPK9IrUvb8PYTSnpJSE7VXHrquDK&rand='+Math.random();
+        var                     url='http://pipes.yahoo.com/pipes/pipe.run?_id=12a52e202be8b86ebe5583a7841f3489&_render=kml&spotshareglId=0zPubHPK9IrUvb8PYTSnpJSE7VXHrquDK&rand='+Math.random();
 
         var spotKML = new google.maps.KmlLayer(url);
         spotKML.setMap(map);
