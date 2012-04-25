@@ -20,9 +20,9 @@
             myOptions);
         var                     url='http://pipes.yahoo.com/pipes/pipe.run?_id=12a52e202be8b86ebe5583a7841f3489&_render=kml&spotshareglId=0zPubHPK9IrUvb8PYTSnpJSE7VXHrquDK&rand='+Math.random();
 
-        var spotKML = new google.maps.KmlLayer(url);
+        var spotKML = new google.maps.KmlLayer(url, {preserveViewport: true});
         spotKML.setMap(map);
-        var poiKML = new google.maps.KmlLayer('http://maps.google.com/maps/ms?authuser=0&vps=2&ie=UTF8&hl=en&oe=UTF8&msa=0&msid=209082383258196311319.0004bbad5c1fed237e40a&output=kml&rand='+Math.random());
+        var poiKML = new google.maps.KmlLayer('http://maps.google.com/maps/ms?authuser=0&vps=2&ie=UTF8&hl=en&oe=UTF8&msa=0&msid=209082383258196311319.0004bbad5c1fed237e40a&output=kml&rand='+Math.random(), {preserveViewport: true} );
         poiKML.setMap(map);
       }
     </script>
