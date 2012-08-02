@@ -13,3 +13,5 @@ To solve this problem you need to pass -Dweblogic.home=${project.build.sourceDir
 > java weblogic.management.commo.WebLogicMBeanMaker -jvmArgs "-Dweblogic.home=${project.build.sourceDirectory}/.." ... 
 
 This fake WebLogic home location should be part of your project and fixed relative to your source.  All you need to do to set it up is to add &lt;WEBLOGIC_HOME&gt;/lib/schema/weblogic-domain-binding.jar to your ${project.build.sourceDirectory}/../lib/schema/ as well as &lt;WEBLOGIC_HOME&gt;/lib/mbeantypes/wlManagementImplSource.jar and &lt;WEBLOGIC_HOME&gt;/lib/mbeantypes/wlManagementMBean.jar to ${project.build.sourceDirectory}/../lib/mbeantypes.
+
+Check out your typical BEA sample security providers project that can be built with maven [here](https://github.com/arykov/weblogic-security-provider-mvn).
