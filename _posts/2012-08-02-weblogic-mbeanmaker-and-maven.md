@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "WebLogicMBeanMaker and Maven"
+title: "WebLogic MBeanMaker and Maven"
 description: ""
 category: 
 tags: [weblogic, maven, security]
