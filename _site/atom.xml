@@ -4,13 +4,29 @@
  <title>RYALTECH</title>
  <link href="http://blog.ryaltech.com/atom.xml" rel="self"/>
  <link href="http://blog.ryaltech.com"/>
- <updated>2012-08-01T22:53:54-04:00</updated>
+ <updated>2012-08-02T07:59:18-04:00</updated>
  <id>http://blog.ryaltech.com</id>
  <author>
    <name>RYALTECH</name>
    <email>alex.rykov@ryaltech.com</email>
  </author>
 
+ 
+ <entry>
+   <title>WebLogicMBeanMaker and Maven</title>
+   <link href="http://blog.ryaltech.com/2012/08/02/weblogicmbeanmaker-and-maven"/>
+   <updated>2012-08-02T00:00:00-04:00</updated>
+   <id>http://blog.ryaltech.com/2012/08/02/weblogicmbeanmaker-and-maven</id>
+   <content type="html">&lt;p&gt;Setting up Maven build of your custom WebLogic security providers is no trivial task. This &lt;a href='http://monduke.com/2007/08/29/maven-and-weblogicmbeanmaker-in-weblogic-910/'&gt;post&lt;/a&gt; describes some of the pain you have to go to, but does not take you quite all the way. Yet this solution still depends on WebLogic. This makes assumptions about machines where maven will run on.&lt;/p&gt;
+
+&lt;p&gt;To solve this problem you need to pass -Dweblogic.home=${project.build.sourceDirectory}/.. parameter to WebLogicMBeanMaker subprocesses to trick it into using location of your choice. This can be done like this&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;java weblogic.management.commo.WebLogicMBeanMaker -jvmArgs &amp;#8220;-Dweblogic.home=${project.build.sourceDirectory}/..&amp;#8221; &amp;#8230;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This fake WebLogic home location should be part of your project and fixed relative to your source. All you need to do to set it up is to add &amp;#60;WEBLOGIC_HOME&amp;#62;/lib/schema/weblogic-domain-binding.jar to your ${project.build.sourceDirectory}/../lib/schema/ as well as &amp;#60;WEBLOGIC_HOME&amp;#62;/lib/mbeantypes/wlManagementImplSource.jar and &amp;#60;WEBLOGIC_HOME&amp;#62;/lib/mbeantypes/wlManagementMBean.jar to ${project.build.sourceDirectory}/../lib/mbeantypes.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Load WebLogic Libraries into Maven</title>
