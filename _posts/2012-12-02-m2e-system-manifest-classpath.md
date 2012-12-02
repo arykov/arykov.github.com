@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "M2E System Dependencies Manifest Classpath"
+title: "M2E System Dependencies Manifest Class-path"
 description: ""
 category:
 tags: [Eclipse, M2E, maven]
 ---
 {% include JB/setup %}
 
-Maven system scoped dependencies should only be used when these dependencies are sensitive to their location. I was unlucky enough to need them and happened to be using M2E plugin for Eclipse. Some of my code depended on classes packaged in jars that my system dependency referred to using its manifest classpath entry.
+Recently I had to use a system scoped dependency in my pom. Some of my code used classes packaged in the jars pulled in through system dependency's manifest Class-Path entry.
 
-To my surprise Eclipse was showing errors in my code while compilation using command line mvn went smoothly. Some digging revealed the reason and the solution.
+To my surprise my M2E enabled Eclipse project was showing "import cannot be resolved" errors while compilation using command line mvn went smoothly. Some digging revealed the root cause and the solution.
 
 Turns out that starting with Java 1.5 javac started respecting classpath manifest entries in jar files - [bug 4212732](http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4212732). Command line mvn relies on your java tooling for compilation. So it is clear why this works. 
 
