@@ -4,7 +4,7 @@
  <title>RYALTECH</title>
  <link href="http://blog.ryaltech.com/atom.xml" rel="self"/>
  <link href="http://blog.ryaltech.com"/>
- <updated>2012-12-02T16:48:58-05:00</updated>
+ <updated>2012-12-02T17:02:54-05:00</updated>
  <id>http://blog.ryaltech.com</id>
  <author>
    <name>RYALTECH</name>
@@ -25,7 +25,7 @@
 
 &lt;p&gt;M2E plugin relies on Eclipse compiler, which started respecting manifest classpath entries in 3.5 but &lt;a href='http://lt-rider.blogspot.ca/2010/05/jdt-manifest-classpath-classpath.html'&gt;dropped this support in 3.6&lt;/a&gt;. Hence the discrepancy in behaviour.&lt;/p&gt;
 
-&lt;p&gt;Solution is simple. Just add -DresolveReferencedLibrariesForContainers=true to the Eclipse ini file as this &lt;a href='(http://lt-rider.blogspot.ca/2010/05/jdt-manifest-classpath-classpath.html'&gt;post suggests&lt;/a&gt;.&lt;/p&gt;</content>
+&lt;p&gt;Solution is simple. Just add -DresolveReferencedLibrariesForContainers=true to the Eclipse ini file as this &lt;a href='http://lt-rider.blogspot.ca/2010/05/jdt-manifest-classpath-classpath.html'&gt;post suggests&lt;/a&gt;.&lt;/p&gt;</content>
  </entry>
  
  <entry>

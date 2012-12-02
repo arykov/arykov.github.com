@@ -13,6 +13,6 @@ To my surprise Eclipse was showing errors in my code while compilation using com
 
 Turns out that starting with Java 1.5 javac started respecting classpath manifest entries in jar files - [bug 4212732](http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4212732). Command line mvn relies on your java tooling for compilation. So it is clear why this works. 
 
-M2E plugin relies on Eclipse compiler, which started respecting manifest classpath entries in 3.5 but [dropped this support in 3.6](http://lt-rider.blogspot.ca/2010/05/jdt-manifest-classpath-classpath.html). Hence the discrepancy in behaviour. 
+M2E plugin relies on Eclipse compiler, which started respecting manifest classpath entries in 3.5 but [dropped this support in 3.6](https://bugs.eclipse.org/bugs/show_bug.cgi?id=313965). Hence the discrepancy in behaviour. 
 
-Solution is simple. Just add -DresolveReferencedLibrariesForContainers=true to the Eclipse ini file as this [post suggests]((http://lt-rider.blogspot.ca/2010/05/jdt-manifest-classpath-classpath.html).
+Solution is simple. Just add -DresolveReferencedLibrariesForContainers=true to the Eclipse ini file as this [post suggests](http://lt-rider.blogspot.ca/2010/05/jdt-manifest-classpath-classpath.html).
