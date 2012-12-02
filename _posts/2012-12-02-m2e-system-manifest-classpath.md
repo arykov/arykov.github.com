@@ -11,7 +11,7 @@ Maven system scoped dependencies should only be used when these dependencies are
 
 To my surprise Eclipse was showing errors in my code while compilation using command line mvn went smoothly. Some digging revealed the reason and the solution.
 
-Turns out that starting with Java 1.5 javac started respecting classpath manifest entries in jar files - [bug 4212732](http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4212732]. Command line mvn relies on your java tooling for compilation. So it is clear why this works. 
+Turns out that starting with Java 1.5 javac started respecting classpath manifest entries in jar files - [bug 4212732](http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4212732). Command line mvn relies on your java tooling for compilation. So it is clear why this works. 
 
 M2E plugin relies on Eclipse compiler, which started respecting manifest classpath entries in 3.5 but [dropped this support in 3.6](http://lt-rider.blogspot.ca/2010/05/jdt-manifest-classpath-classpath.html). Hence the discrepancy in behaviour. 
 
