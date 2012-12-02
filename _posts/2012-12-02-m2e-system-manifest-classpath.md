@@ -15,4 +15,4 @@ Turns out that starting with Java 1.5 javac started respecting classpath manifes
 
 M2E plugin relies on Eclipse compiler, which started respecting manifest classpath entries in 3.5 but [dropped this support in 3.6](http://lt-rider.blogspot.ca/2010/05/jdt-manifest-classpath-classpath.html). Hence the discrepancy in behaviour. 
 
-Solution is simple. Just add -DresolveReferencedLibrariesForContainers=true to the Eclipse ini file as this [post suggests](http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4212732)
+Solution is simple. Just add -DresolveReferencedLibrariesForContainers=true to the Eclipse ini file as this [post suggests]((http://lt-rider.blogspot.ca/2010/05/jdt-manifest-classpath-classpath.html).
