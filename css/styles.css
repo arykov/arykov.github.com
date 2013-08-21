@@ -1,0 +1,192 @@
+/* Eric Meyer's reset.css: http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+/*
+ol, ul {
+	list-style: none;
+}
+*/
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Main Stylesheet Body */
+
+body {
+  background-color: white;
+  color: black;
+  //font-family: Georgia, Times New Roman, serif;
+  margin: 0;
+  padding: 0;
+}
+
+div.banner {
+  border-bottom: 2px solid;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+div.banner a {
+  color: black;
+  text-decoration: none;
+}
+
+span.publishDate {
+  font-style: italic;
+}
+
+div.title-block {
+  margin: 0 0 1em;
+}
+
+div.title-block h1 {
+  margin-bottom: 0;
+}
+
+div#container {
+  margin: 0 auto;
+  padding: 20px;
+  width: 960px;
+}
+
+p {
+  margin: 0 0 1em;
+  line-height: 140%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Calibri, Arial, sans-serif;
+  font-weight: bold;
+  margin: 35px 0 10px;
+}
+
+h1 { font-size: 200%; }
+h2 { font-size: 150%; }
+h3 { font-size: 120%; }
+
+ul {
+ list-style: disc;
+}
+ol, ul { 
+  margin: 0 0 1em 3em;
+}
+
+ol.posts, ol.links,  ul.posts, ul.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ol.links li,
+ol.posts li,
+ul.posts li,
+ul.links li {
+  padding: 5px 0;
+}
+
+ol.posts span.publishDate, ul.posts span.publishDate {
+  margin-right: 20px;
+}
+
+div.figure {
+  text-align: center;
+  margin: 2em 0;
+}
+
+span.caption {
+  display: block;
+  font: bold 18px Calibri, Arial, sans-serif;
+  font: italic 18px Georgia, Times New Roman, serif;
+}
+
+code {
+  font-size: 14px;
+  font-family: Consolas, Courier New, monospace;
+  font-weight: normal;
+}
+
+pre {
+  margin: 0 2em 1em;
+}
+
+
+/*
+ * Form tables
+ */
+table.form {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 0 auto 1em;
+}
+
+table.form td,
+table.form th {
+  border: 1px solid black;
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 90%;
+  padding: 5px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.form th {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+div.classDiagram {
+  margin: 30px auto 30px;
+}
+
+div.petriNet img {
+  display: block;
+  margin: 30px auto 30px;
+}
+
+

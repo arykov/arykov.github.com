@@ -1,17 +1,26 @@
 ---
 layout: base
-title: Alex Rykov - Archive
+title: Alex Rykov
 ---
+
+
     {% include header.html %}
     {% include nav.html %}
-    {% for post in site.posts %}
+
+
     <ul class="posts">
+    {% for post in site.posts limit:20 %}
       <li>
         <span class="publishDate">{{ post.date | date: "%Y-%m-%d" }}</span>
         <span class="postTitle">
           <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
         </span>
       </li>
-    </ul>
     {% endfor %}
+    </ul>
+    <p>
+      <a href="archive.html">More...</a>
+    </p>
+
+  </ul>
 

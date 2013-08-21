@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "startWebLogic script invocation from wlst"
+title: "Invoking startWebLogic script from wlst"
 description: ""
 category: 
 tags: [weblogic, wlst]
