@@ -5,7 +5,6 @@ description: ""
 category:
 tags: [Eclipse, M2E, maven]
 ---
-{% include JB/setup %}
 
 Recently I had to use a system scoped dependency in my pom. Some of my code used classes packaged in the jars pulled in through system dependency's manifest Class-Path entry.
 
