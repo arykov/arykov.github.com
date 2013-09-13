@@ -5,7 +5,6 @@ description: ""
 category:
 tags: [testing, ldap]
 ---
-{% include JB/setup %}
 It is never easy to remove components that have been in production for a while. This obvious fact was further reinforced when I was switching authentication from security product that cannot be named to a simple LDAP or AD more specifically. 
 
 AD to application group mappings was the only function performed by that product, but there was quite a few - thousands to be exact. How would one verify that all mappings get converted and noone looses access? Test  accounts is a good start but you never know how representative they are. Wouldn't it be great to verify every single user? The only problem is - everyone has their own password which makes ldap binds impossible. 

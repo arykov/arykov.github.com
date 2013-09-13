@@ -1,0 +1,18 @@
+body {
+  font-size: 11pt;
+}
+
+div.banner {
+  padding-top: 0;
+}
+
+div#container {
+  padding: 0;
+  width: 6in;
+  margin: 0 auto;
+}
+
+div.classDiagram {
+  page-break-inside: avoid;
+}
+
