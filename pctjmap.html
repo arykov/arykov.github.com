@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD1wOf9ISBejnZhC-umNwWdaQbuSk3mMwg&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var myOptions = {        	
+          center: new google.maps.LatLng(47.634068, -121.142670),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            myOptions);
+        var                     url='http://pipes.yahoo.com/pipes/pipe.run?_id=12a52e202be8b86ebe5583a7841f3489&_render=kml&spotshareglId=0zPubHPK9IrUvb8PYTSnpJSE7VXHrquDK&rand='+Math.random();
+
+        var spotKML = new google.maps.KmlLayer(url, {preserveViewport: true});
+        spotKML.setMap(map);
+        var poiKML = new google.maps.KmlLayer('https://maps.google.ca/maps/ms?authuser=0&vps=2&hl=en&ie=UTF8&msa=0&output=kml&msid=209082383258196311319.0004e5fd8980a17663eec&rand='+Math.random(), {preserveViewport: true} );
+        poiKML.setMap(map);
+      }
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width:100%; height:100%"></div>
+  </body>
+</html>
