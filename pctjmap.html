@@ -40,20 +40,22 @@
         var url='https://api.findmespot.com/spot-main-web/consumer/rest-api/2.0/public/feed/0zPubHPK9IrUvb8PYTSnpJSE7VXHrquDK/message.json?rand='+Math.random()+'&callback=?';
         $.getJSON(url, function(result){    
           var messages = result.response.feedMessageResponse.messages.message;
-          if(!$.isArray(messages)) {
-            messages=[messages];
-          }
+          if(messages){
+            if(!$.isArray(messages)) {
+              messages=[messages];
+            }
 
-          for (var i = 0; i < messages.length; i++) {
-            var myLatlng = new google.maps.LatLng(messages[i].latitude,messages[i].longitude);
-            bounds.extend(myLatlng);
-            var marker = new google.maps.Marker({
-               position: myLatlng,
-               map: map,
-               title: messages[i].dateTime
-             });
+            for (var i = 0; i < messages.length; i++) {
+              var myLatlng = new google.maps.LatLng(messages[i].latitude,messages[i].longitude);
+              bounds.extend(myLatlng);
+              var marker = new google.maps.Marker({
+                 position: myLatlng,
+                 map: map,
+                 title: messages[i].dateTime
+               });
+            }
+            map.fitBounds(bounds);
           }
-          map.fitBounds(bounds);
 
         });      
     });
