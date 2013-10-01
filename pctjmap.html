@@ -1,33 +1,66 @@
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script>
+        var findMeSpotFeedId = '0zPubHPK9IrUvb8PYTSnpJSE7VXHrquDK';
+        var poiKmlUrl = 'https://maps.google.ca/maps/ms?authuser=0&vps=2&hl=en&ie=UTF8&msa=0&output=kml&msid=209082383258196311319.0004e5fd8980a17663eec';
+    </script>
     <style type="text/css">
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
       #map_canvas { height: 100% }
     </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD1wOf9ISBejnZhC-umNwWdaQbuSk3mMwg&sensor=false">
     </script>
-    <script type="text/javascript">
-      function initialize() {
-        var myOptions = {        	
-          center: new google.maps.LatLng(47.634068, -121.142670),
-          zoom: 8,
+    <script>
+      $(document).ready(function(){
+	var myOptions = {        	
           mapTypeId: google.maps.MapTypeId.TERRAIN
         };
         var map = new google.maps.Map(document.getElementById("map_canvas"),
             myOptions);
-        var                     url='http://pipes.yahoo.com/pipes/pipe.run?_id=12a52e202be8b86ebe5583a7841f3489&_render=kml&spotshareglId=0zPubHPK9IrUvb8PYTSnpJSE7VXHrquDK&rand='+Math.random();
+        
 
-        var spotKML = new google.maps.KmlLayer(url, {preserveViewport: true});
-        spotKML.setMap(map);
-        var poiKML = new google.maps.KmlLayer('https://maps.google.ca/maps/ms?authuser=0&vps=2&hl=en&ie=UTF8&msa=0&output=kml&msid=209082383258196311319.0004e5fd8980a17663eec&rand='+Math.random(), {preserveViewport: true} );
-        poiKML.setMap(map);
-      }
+     
+        var poiKML = new google.maps.KmlLayer(poiKmlUrl+'&rand='+Math.random(), {preserveViewport: true} );
+        poiKML.setMap(map);    
+        var bounds = new google.maps.LatLngBounds();
+
+        //change bounds once kml loaded
+        google.maps.event.addListenerOnce(poiKML, "defaultviewport_changed", 
+          function() { 
+            var kmlBounds = poiKML.getDefaultViewport();
+            bounds.extend(kmlBounds.getNorthEast());
+            bounds.extend(kmlBounds.getSouthWest());   
+            map.fitBounds(bounds);
+         });  
+
+        var url='https://api.findmespot.com/spot-main-web/consumer/rest-api/2.0/public/feed/0zPubHPK9IrUvb8PYTSnpJSE7VXHrquDK/message.json?rand='+Math.random()+'&callback=?';
+        $.getJSON(url, function(result){    
+          var messages = result.response.feedMessageResponse.messages.message;
+          if(!$.isArray(messages)) {
+            messages=[messages];
+          }
+
+          for (var i = 0; i < messages.length; i++) {
+            var myLatlng = new google.maps.LatLng(messages[i].latitude,messages[i].longitude);
+            bounds.extend(myLatlng);
+            var marker = new google.maps.Marker({
+               position: myLatlng,
+               map: map,
+               title: messages[i].dateTime
+             });
+          }
+          map.fitBounds(bounds);
+
+        });      
+    });
     </script>
+    
   </head>
-  <body onload="initialize()">
+  <body>
     <div id="map_canvas" style="width:100%; height:100%"></div>
   </body>
 </html>
