@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Connection closed: chasing the phantom"
+title: "Connection closed: chasing a phantom"
 description: ""
 category:
 tags: [troubleshooting, connection leak, heap dump, WebLogic, MyBatis, Spring, JTA]
