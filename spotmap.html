@@ -40,7 +40,11 @@
 
         var url='https://api.findmespot.com/spot-main-web/consumer/rest-api/2.0/public/feed/0zPubHPK9IrUvb8PYTSnpJSE7VXHrquDK/message.json?rand='+Math.random()+'&callback=?';
         $.getJSON(url, function(result){    
-          var messages = result.response.feedMessageResponse.messages.message;
+          var messages = null;
+          try{
+          	messages = result.response.feedMessageResponse.messages.message;
+          }catch(err){
+          }
           if(messages){
             if(!$.isArray(messages)) {
               messages=[messages];
