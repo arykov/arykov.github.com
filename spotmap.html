@@ -3,7 +3,8 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <script>
         var findMeSpotFeedId = '0zPubHPK9IrUvb8PYTSnpJSE7VXHrquDK';
-        var poiKmlUrl = 'https://maps.google.ca/maps/ms?authuser=0&vps=2&hl=en&ie=UTF8&msa=0&output=kml&msid=209082383258196311319.0004e5fd8980a17663eec';
+        //var poiKmlUrl = 'https://maps.google.ca/maps/ms?authuser=0&vps=2&hl=en&ie=UTF8&msa=0&output=kml&msid=209082383258196311319.0004e5fd8980a17663eec';
+        var poiKmlUrl = 'https://www.google.com/maps/d/kml?mid=zU5toommvmVs.kBY2k2NhVPWA'
     </script>
     <style type="text/css">
       html { height: 100% }
@@ -39,7 +40,11 @@
 
         var url='https://api.findmespot.com/spot-main-web/consumer/rest-api/2.0/public/feed/0zPubHPK9IrUvb8PYTSnpJSE7VXHrquDK/message.json?rand='+Math.random()+'&callback=?';
         $.getJSON(url, function(result){    
-          var messages = result.response.feedMessageResponse.messages.message;
+          var messages = null;
+          try{
+          	messages = result.response.feedMessageResponse.messages.message;
+          }catch(err){
+          }
           if(messages){
             if(!$.isArray(messages)) {
               messages=[messages];
