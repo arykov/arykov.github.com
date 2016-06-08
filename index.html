@@ -9,7 +9,7 @@ title: Alex Rykov
     <ul class="posts">
     {% for post in site.posts limit:20 %}
       <li>
-        <span class="publishDate">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <span class="publishDate">{{ post.date | date: "%Y-%b-%d" }}</span>
         <span class="postTitle">
           <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
         </span>
