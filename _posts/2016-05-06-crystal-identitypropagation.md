@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Identity Propogation from Crystal Reports Enterprise to Oracle DB"
+title: "Identity Propagation from Crystal Reports Enterprise to Oracle DB"
 description: ""
 category:
 tags: [reporting, business objects, crystal reports, SAP, java, jdbc]
 ---
 
-I encountered a curious puzzle while upgrading a simple WebSphere application and its reports running in Business Objects Enterprise. It was designed in a way that all database query results were dependent on Oracle DB connection user identity. 
+I encountered a curious puzzle while upgrading a simple WebSphere application and its reports running in Business Objects Enterprise. It was designed in a way that all database query results were dependent on Oracle DB connection user identity. And client had no appetite for changing it.
 
 Historically each application and BOE user had a corresponding Oracle DB user id and functionality was easy to achieve. This approach, however, came with its set of problems. Maintaining a large number of such users and synching passwords is no small feat. Connection pooling is impossible.
 
