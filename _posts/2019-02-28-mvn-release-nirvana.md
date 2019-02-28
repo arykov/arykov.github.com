@@ -7,7 +7,11 @@ tags: [mvn, maven, jenkins, java, git]
 ---
 
 Axel Fontaine had a number of posts on improving release for maven projects. His latest [installment](https://axelfontaine.com/blog/dead-burried.html)
-suggests using mvn deploy scm:tag -Drevision=$BUILD_NUMBER to release without using release plugin which became possible with mvn 3.2.1+ that introduced continuous delivery friendly versions.
+suggests releasign using: 
+```shell
+mvn deploy scm:tag -Drevision=$BUILD_NUMBER
+``` 
+It is done without using release plugin which became possible with mvn 3.2.1+ that introduced continuous delivery friendly versions.
 
 This leaves/creates two problems:
 
