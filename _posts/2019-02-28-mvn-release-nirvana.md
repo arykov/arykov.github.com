@@ -7,7 +7,7 @@ tags: [mvn, maven, jenkins, java, git]
 ---
 
 Axel Fontaine had a number of posts on improving release for maven projects. His latest [installment](https://axelfontaine.com/blog/dead-burried.html)
-suggests releasign using: 
+suggests releasing using: 
 ```shell
 mvn deploy scm:tag -Drevision=$BUILD_NUMBER
 ``` 
