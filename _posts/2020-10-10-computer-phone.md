@@ -17,8 +17,7 @@ Until this is implemented, you can use your phone(it does not need to be smart) 
 Configure an account with one of VOIP providers. I use [voip.ms](https://voip.ms). You will need a direct inward dial(DID) number. It is also a good idea to make sure some sort of security is in place. Otherwise anyone who knows the phone number will be able to hear what is going on and "speak into the microphone". In case of voip.ms, callback or IVR would do the trick. 
 3. Software:
   * Install [Pi-KVM](https://pikvm.org/download.html) on your raspberry pi
-  * Build pjsua
-      SSH into pikvm box and execute the following
+  * To build pjsua SSH into pikvm box and execute the following
 ```bash
 pacman -S alsa-lib
 wget http://www.pjsip.org/release/2.3/pjproject-2.3.tar.bz2
