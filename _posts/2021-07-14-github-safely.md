@@ -10,7 +10,7 @@ A growing number of corporations is justifiably concerned with data exfiltration
 
 For companies whose arsenal includes corporate proxies with man in the middle(MITM) capabilities(not advocating for or against them or discuss legal implications) can easily block git and other upload functionality while allowing looking at the code.
 
-Here's a simple way of testing this approach using Squid on Ubuntu. Further hardening is obviously required.
+Here's a simple way of checking this approach using Squid on Ubuntu. It is for testing only and further hardening of squid setup and configuration is likely required.
 
 Squid has had SSL bump feature(MITM supporting functionality) for a while. But it seems that due to [opensssl GPL license incompatibility](opensssl license incompatibility) Squid version packaged for debian based distributions omits this feature. Luckily it is easy enough to build yourself.
 
@@ -64,8 +64,7 @@ git config --global http.sslVerify false
 git clone https://github.com/github/training-kit
 ```
 You will receive 403 error
-
-Github has not been blocking [git dumb protocol](https://git-scm.com/docs/http-protocol) for [ten years now](https://github.blog/2011-03-09-git-dumb-http-transport-to-be-turned-off-in-90-days/). To verify let us rerun with GIT_SMART_HTTP variable set to 0
+Github has been blocking [git dumb protocol](https://git-scm.com/docs/http-protocol) for [ten years now](https://github.blog/2011-03-09-git-dumb-http-transport-to-be-turned-off-in-90-days/). To verify let us rerun with GIT_SMART_HTTP variable set to 0
 ```bash
 export GIT_SMART_HTTP=0
 #checkout
