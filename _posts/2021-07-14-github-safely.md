@@ -56,7 +56,7 @@ This should return html produced by github.
 ```bash
 curl -k -X POST https://github.com
 ```
-This should return 403 and html produced by squid, saying that access is denied.
+This should return 403 and html produced by squid, saying that access is denied.  
 You could further ensure that git does not work, by running the following:
 ```bash
 #configure git to use proxy
@@ -67,7 +67,7 @@ git config --global http.sslVerify false
 #checkout
 git clone https://github.com/github/training-kit
 ```
-You will receive 403 error
+You will receive 403 error.  
 Github has been blocking [git dumb protocol](https://git-scm.com/docs/http-protocol) for [ten years now](https://github.blog/2011-03-09-git-dumb-http-transport-to-be-turned-off-in-90-days/). To verify let us rerun with GIT_SMART_HTTP variable set to 0
 ```bash
 export GIT_SMART_HTTP=0
