@@ -40,6 +40,10 @@ sudo openssl dhparam -outform PEM -out /usr/local/squid/etc/ssl/dhparam.pem 4096
 sudo /usr/local/squid/libexec/security_file_certgen  -c  -s  /usr/local/squid/var/lib/ssl_db -M 4MB
 ```
 Place squid.conf similar to [this](/attachments/2021-07-14-github-safely/squid.conf) into /usr/local/squid/etc/
+```bash
+#run
+sudo /usr/local/squid/sbin/squid
+```
 
 4. Test
 ```bash
