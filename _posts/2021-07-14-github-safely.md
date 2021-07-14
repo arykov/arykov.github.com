@@ -49,11 +49,9 @@ export https_proxy=http://localhost:3128
 curl -k https://github.com
 ```
 This should return html produced by github.
-
 ```bash
 curl -k -X POST https://github.com
 ```
-
 This should return 403 and html produced by squid, saying that access is denied.
 You could further ensure that git does not work, by running the following:
 ```bash
