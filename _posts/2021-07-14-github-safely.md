@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GitHub in corporate envirinments"
+title: "GitHub in corporate environments"
 description: ""
 category:
 tags: [security, git, github, squid, mitm, ssl, development]
