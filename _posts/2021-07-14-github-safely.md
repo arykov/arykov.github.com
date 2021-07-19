@@ -6,7 +6,7 @@ category:
 tags: [security, git, github, squid, mitm, ssl, development]
 ---
 
-A growing number of corporations is justifiably concerned with data exfiltration risks. They often use a sledgehammer of banning access to services like GitHub. This severely handicaps their developers. Is there a better way?
+A growing number of corporations is justifiably concerned with data exfiltration risks. Sledgehammer of banning access to services like GitHub is often used to counteract them. Unfortunately this severely handicaps developers. Is there a better way?
 
 For companies whose arsenal includes corporate proxies with man in the middle(MITM) capabilities(not advocating for or against them or discuss legal implications) can easily block git and other upload functionality while allowing looking at the code.
 
