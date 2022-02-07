@@ -8,6 +8,8 @@ tags: [security, git, github, squid, mitm, ssl, development]
 
 A growing number of corporations is justifiably concerned with data exfiltration risks. Sledgehammer of banning access to services like GitHub is often used to counteract them. Unfortunately this severely handicaps developers. Is there a better way?
 
+It would be lovely, of course, if [GitHub](https://github.com) exposed a "readonly" mirror of itself. But what can one do until that happens? 
+
 For companies whose arsenal includes corporate proxies with man in the middle(MITM) capabilities(not advocating for or against them or discuss legal implications) can easily block git and other upload functionality while allowing looking at the code.
 
 Here's a simple way of checking this approach using Squid on Ubuntu. It is for testing only and further hardening of squid setup and configuration is likely required.
